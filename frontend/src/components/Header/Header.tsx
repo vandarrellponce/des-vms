@@ -26,7 +26,9 @@ const Header = () => {
 			<Navbar variant="dark" bg="dark" expand="lg" collapseOnSelect>
 				<Container>
 					<LinkContainer to="/">
-						<Navbar.Brand>Pro Store</Navbar.Brand>
+						<Navbar.Brand>
+							<i className="fas fa-users-cog size-5x"> </i> VMgmt
+						</Navbar.Brand>
 					</LinkContainer>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,13 +36,6 @@ const Header = () => {
 					<Navbar.Collapse id="basic-navbar-nav">
 						{/* margin left auto */}
 						<Nav className="ml-auto">
-							<LinkContainer to="/cart/">
-								<Nav.Link>
-									<i className="fas fa-shopping-cart px-1"></i>
-									Cart
-								</Nav.Link>
-							</LinkContainer>
-
 							{userInfo ? (
 								<NavDropdown
 									title={userInfo.name}

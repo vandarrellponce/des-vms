@@ -1,6 +1,5 @@
 import React from 'react'
-import Col from 'react-bootstrap/esm/Col'
-import Row from 'react-bootstrap/esm/Row'
+
 import Nav from 'react-bootstrap/Nav'
 import { LinkContainer } from 'react-router-bootstrap'
 
@@ -16,41 +15,41 @@ const CheckoutSteps: React.FC<Props> = ({ step1, step2, step3, step4 }) => {
 		<Nav className="justify-content-center mb-4">
 			<Nav.Item>
 				{step1 ? (
-					<LinkContainer to="/login">
-						<Nav.Link>Step 1</Nav.Link>
+					<LinkContainer to="/personal">
+						<Nav.Link>Personal Info</Nav.Link>
 					</LinkContainer>
 				) : (
-					<Nav.Link disabled>Step 1</Nav.Link>
+					<Nav.Link disabled>Personal Info</Nav.Link>
 				)}
 			</Nav.Item>
 
 			<Nav.Item>
 				{step2 ? (
-					<LinkContainer to="/shipping">
-						<Nav.Link>Step 2</Nav.Link>
+					<LinkContainer to="/health">
+						<Nav.Link>Health Status</Nav.Link>
 					</LinkContainer>
 				) : (
-					<Nav.Link disabled>Step 2</Nav.Link>
+					<Nav.Link disabled>Health Status</Nav.Link>
 				)}
 			</Nav.Item>
 
 			<Nav.Item>
 				{step3 ? (
-					<LinkContainer to="/payment">
-						<Nav.Link>Step 3</Nav.Link>
+					<LinkContainer to="/appointment">
+						<Nav.Link>Appointment</Nav.Link>
 					</LinkContainer>
 				) : (
-					<Nav.Link disabled>Step 3</Nav.Link>
+					<Nav.Link disabled>Appointment</Nav.Link>
 				)}
 			</Nav.Item>
 
 			<Nav.Item>
 				{step4 ? (
-					<LinkContainer to="/placeorder">
-						<Nav.Link>Step 4</Nav.Link>
+					<LinkContainer to="/passcode">
+						<Nav.Link>Passcode</Nav.Link>
 					</LinkContainer>
 				) : (
-					<Nav.Link disabled>Step 4</Nav.Link>
+					<Nav.Link disabled>Passcode</Nav.Link>
 				)}
 			</Nav.Item>
 		</Nav>

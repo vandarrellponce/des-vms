@@ -10,7 +10,9 @@ import ProfileScreen from './screens/ProfileScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import { useDispatch, useSelector } from 'react-redux'
 import { authUser } from './actions/users/loginUser'
-import FillupScreen from './screens/FillupScreen'
+import PersonalScreen from './screens/PersonalScreen'
+import HealthScreen from './screens/HealthScreen'
+import AppointmentScreen from './screens/AppointmentScreen'
 
 const App = () => {
 	const { userInfo } = useSelector((state) => state.user)
@@ -25,10 +27,15 @@ const App = () => {
 			<main className="py-3">
 				<Container>
 					{/* <Route path="/fillup" component={FillupScreen} /> */}
+
 					<Route path="/login" component={LoginScreen} />
 					<Route path="/register" component={RegisterScreen} />
 					<Route path="/profile" component={ProfileScreen} />
-					<Route path="/" exact component={FillupScreen} />
+					<Route path="/appointment" component={AppointmentScreen} />
+
+					<Route path="/health" component={HealthScreen} />
+					<Route path="/personal" component={PersonalScreen} />
+					<Route path="/" exact component={Home} />
 				</Container>
 			</main>
 			<Footer />

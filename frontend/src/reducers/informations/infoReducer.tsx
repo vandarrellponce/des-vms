@@ -1,0 +1,42 @@
+const infoReducer = (
+	state = {
+		personal: null,
+		health: null,
+		appointment: null,
+		passcode: null,
+	},
+	action
+) => {
+	switch (action.type) {
+		// USER LOGIN
+		case 'PERSONAL_SUBMIT': {
+			return {
+				...state,
+				personal: action.payload,
+			}
+		}
+		case 'HEALTH_SUBMIT': {
+			return {
+				...state,
+				health: action.payload,
+			}
+		}
+		case 'APPOINTMENT_SUBMIT': {
+			return {
+				...state,
+				appointment: action.payload,
+			}
+		}
+		case 'PASSCODE_READY': {
+			return {
+				...state,
+				passcode: action.payload,
+			}
+		}
+
+		default:
+			return state
+	}
+}
+
+export default infoReducer

@@ -1,20 +1,25 @@
 import Axios from 'axios'
 import React, { useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/esm/Col'
+import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
-import Product from '../components/Product/Product'
-import { useSelector, useDispatch } from 'react-redux'
-import getProductList from '../actions/products/productListActions'
-import Loader from '../components/Loader/Loader'
-import Message from '../components/Message/Message'
+import FormContainer from '../components/FormContainer/FormContainer'
 
-const Home = () => {
+const Home = ({ history }) => {
 	useEffect(() => {}, [])
 
 	return (
-		<div>
+		<FormContainer>
+			{' '}
 			<h2 className="text-center">Home</h2>
-		</div>
+			<Button
+				style={{ width: '100%' }}
+				onClick={(e) => history.push('/personal')}
+			>
+				Create Appointment
+			</Button>
+		</FormContainer>
 	)
 }
 
