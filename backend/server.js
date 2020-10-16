@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 // DATBASE CONNECTION
-await connectDB()
+connectDB()
 
 // ROUTES
 app.get('/api', (req, res) => {
