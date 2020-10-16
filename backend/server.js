@@ -21,7 +21,7 @@ app.get('/api', (req, res) => {
 	res.send('API is running')
 })
 app.use('/api/products', productRoutes)
-app.use('/api/meeting', meetingRoutes)
+app.use('/api/meetings', meetingRoutes)
 app.use('/api/users', userRoutes)
 app.all('*', (req, res) =>
 	res.status(404).send({ message: `Not found - ${req.originalUrl}` })

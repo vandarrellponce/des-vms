@@ -3,7 +3,7 @@ const infoReducer = (
 		personal: null,
 		health: null,
 		appointment: null,
-		passcode: null,
+		meeting: null,
 	},
 	action
 ) => {
@@ -30,7 +30,7 @@ const infoReducer = (
 		case 'PASSCODE_READY': {
 			return {
 				...state,
-				passcode: action.payload,
+				meeting: action.payload,
 			}
 		}
 

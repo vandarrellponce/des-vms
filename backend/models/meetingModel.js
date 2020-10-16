@@ -27,6 +27,7 @@ const meetingSchema = mongoose.Schema(
 			start: { type: Date, required: true },
 			end: { type: Date, required: true },
 		},
+		token: { type: String, required: true },
 	},
 	{ timestamps: true }
 )

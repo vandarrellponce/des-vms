@@ -13,6 +13,9 @@ import { authUser } from './actions/users/loginUser'
 import PersonalScreen from './screens/PersonalScreen'
 import HealthScreen from './screens/HealthScreen'
 import AppointmentScreen from './screens/AppointmentScreen'
+import { PassThrough } from 'stream'
+import PasscodeScreen from './screens/PasscodeScreen'
+import VisitorLogin from './screens/VisitorLogin'
 
 const App = () => {
 	const { userInfo } = useSelector((state) => state.user)
@@ -31,7 +34,12 @@ const App = () => {
 					<Route path="/login" component={LoginScreen} />
 					<Route path="/register" component={RegisterScreen} />
 					<Route path="/profile" component={ProfileScreen} />
+					<Route
+						path="/meeting/:meetingId/passcode"
+						component={PasscodeScreen}
+					/>
 					<Route path="/appointment" component={AppointmentScreen} />
+					<Route path="/loginvisitor" component={VisitorLogin} />
 
 					<Route path="/health" component={HealthScreen} />
 					<Route path="/personal" component={PersonalScreen} />

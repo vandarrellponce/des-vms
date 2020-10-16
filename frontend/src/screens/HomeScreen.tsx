@@ -19,6 +19,22 @@ const Home = ({ history }) => {
 			>
 				Create Appointment
 			</Button>
+			<br />
+			<br />
+			<Button
+				style={{ width: '100%' }}
+				onClick={(e) => history.push('/loginvisitor')}
+			>
+				Login a Visitor
+			</Button>
+			<br />
+			<br />
+			<Button
+				style={{ width: '100%' }}
+				onClick={(e) => history.push('/logoutvisitor')}
+			>
+				Logout a Visitor
+			</Button>
 		</FormContainer>
 	)
 }
