@@ -17,12 +17,14 @@ const PasscodeScreen = ({ history, match }) => {
 	const meetingId = match.params.meetingId
 	useEffect(() => {
 		if (!meeting) {
-			Axios.get(`/api/meetings/${meetingId}`).then((res) => {
-				dispatch({
-					type: 'PASSCODE_READY',
-					payload: res.data,
-				})
-			})
+			Axios.get(`http://localhost:4000/api/meetings/${meetingId}`).then(
+				(res) => {
+					dispatch({
+						type: 'PASSCODE_READY',
+						payload: res.data,
+					})
+				}
+			)
 		}
 	}, [meeting])
 

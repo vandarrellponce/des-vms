@@ -15,7 +15,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 				)}`,
 			},
 		}
-		const res = await Axios.get(`/api/users/${id}`, config)
+		const res = await Axios.get(
+			`http://localhost:5000/api/users/${id}`,
+			config
+		)
 		dispatch({ type: USER_DETAILS_SUCCESS, payload: res.data })
 	} catch (error) {
 		dispatch({

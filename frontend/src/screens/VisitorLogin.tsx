@@ -13,7 +13,7 @@ const VisitorLogin = () => {
 
 	useEffect(() => {
 		if (result) {
-			Axios.post('/api/visitor/login', {
+			Axios.post('http://localhost:4000/api/visitor/login', {
 				token: result,
 			})
 				.then((res) => {

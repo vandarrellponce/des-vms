@@ -18,7 +18,11 @@ export const updateUser = (updatedUser) => async (dispatch) => {
 			},
 		}
 		const user = await (
-			await Axios.put(`/users/profile`, updatedUser, config)
+			await Axios.put(
+				`http://localhost:5000/api/users/profile`,
+				updatedUser,
+				config
+			)
 		).data
 
 		dispatch({ type: USER_UPDATE_SUCCESS, payload: user })
