@@ -16,10 +16,7 @@ export const authUser = () => async (dispatch) => {
 				)}`,
 			},
 		}
-		const { data } = await Axios.get(
-			'http://localhost:5000/api/users/profile',
-			config
-		)
+		const { data } = await Axios.get('/api/users/profile', config)
 
 		dispatch({ type: USER_AUTH_SUCCESS, payload: data })
 	} catch (error) {
