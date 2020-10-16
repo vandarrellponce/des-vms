@@ -52,7 +52,7 @@ const ShippingScreen = ({ history }) => {
 			.then((res) => {
 				const meeting = res.data
 				dispatch({ type: 'PASSCODE_READY', payload: meeting })
-				history.push(`/meeting/${meeting._id}/passcode`)
+				history.push(`/meetings/${meeting._id}`)
 			})
 			.catch((e) => setSubmitError(e.message))
 	}

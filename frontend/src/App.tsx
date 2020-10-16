@@ -30,16 +30,15 @@ const App = () => {
 			<main className="py-3">
 				<Container>
 					{/* <Route path="/fillup" component={FillupScreen} /> */}
-
-					<Route path="/login" component={LoginScreen} />
+					<Route path="/visitorlogin" component={VisitorLogin} />
+					<Route path="/login" exact component={LoginScreen} />
 					<Route path="/register" component={RegisterScreen} />
 					<Route path="/profile" component={ProfileScreen} />
 					<Route
-						path="/meeting/:meetingId/passcode"
+						path="/meetings/:meetingId"
 						component={PasscodeScreen}
 					/>
 					<Route path="/appointment" component={AppointmentScreen} />
-					<Route path="/loginvisitor" component={VisitorLogin} />
 
 					<Route path="/health" component={HealthScreen} />
 					<Route path="/personal" component={PersonalScreen} />

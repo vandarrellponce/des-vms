@@ -23,7 +23,7 @@ const Home = ({ history }) => {
 			<br />
 			<Button
 				style={{ width: '100%' }}
-				onClick={(e) => history.push('/loginvisitor')}
+				onClick={(e) => history.push('/visitorlogin')}
 			>
 				Login a Visitor
 			</Button>
@@ -31,7 +31,7 @@ const Home = ({ history }) => {
 			<br />
 			<Button
 				style={{ width: '100%' }}
-				onClick={(e) => history.push('/logoutvisitor')}
+				onClick={(e) => history.push('/visitorlogout')}
 			>
 				Logout a Visitor
 			</Button>

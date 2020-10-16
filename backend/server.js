@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import meetingRoutes from './routes/meetingRoutes.js'
+import visitorRoutes from './routes/visitorRoutes.js'
 import connectDB from './config/db.js'
 import errorHandler from './middlewares/errorHandler.js'
 
@@ -20,9 +20,9 @@ await connectDB()
 app.get('/api', (req, res) => {
 	res.send('API is running')
 })
-app.use('/api/products', productRoutes)
 app.use('/api/meetings', meetingRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/visitor', visitorRoutes)
 app.all('*', (req, res) =>
 	res.status(404).send({ message: `Not found - ${req.originalUrl}` })
 )

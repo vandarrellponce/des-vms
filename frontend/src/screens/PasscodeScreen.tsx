@@ -1,16 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
-
+import QRCode from 'qrcode'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer/FormContainer'
 import Loader from '../components/Loader/Loader'
 import Container from 'react-bootstrap/esm/Container'
+import Axios from 'axios'
+import moment from 'moment'
+import jwt from 'jsonwebtoken'
 
-const PasscodeScreen = ({ history }) => {
+const PasscodeScreen = ({ history, match }) => {
 	const { meeting } = useSelector((state) => state.info)
-	useEffect(() => {}, [])
-	/* if (!meeting) return <Loader /> */
+
+	const dispatch = useDispatch()
+	const meetingId = match.params.meetingId
+	useEffect(() => {
+		if (!meeting) {
+			Axios.get(`http://localhost:4000/api/meetings/${meetingId}`).then(
+				(res) => {
+					dispatch({
+						type: 'PASSCODE_READY',
+						payload: res.data,
+					})
+				}
+			)
+		}
+	}, [meeting])
+
+	if (!meeting) return <Loader />
+	/* const decoded = jwt.verify(meeting.token, 'shredsecret')
+	console.log(decoded) */
+	let passcodeUrl
+	QRCode.toDataURL(meeting.token, function (err, url) {
+		passcodeUrl = url
+	})
 	return (
 		<div
 			style={{
@@ -26,11 +50,15 @@ const PasscodeScreen = ({ history }) => {
 				<div>
 					<Image
 						style={{ objectFit: 'contain' }}
-						src={meeting.tokenQR}
+						src={passcodeUrl}
 						alt="passcode"
 						className="mx-10"
 					/>
-					<h4>Expires In : {meeting.expiresIn}</h4>
+					<br />
+					<br />
+					<h5>
+						Expires In : {moment(meeting.appointment.end).fromNow()}
+					</h5>
 				</div>
 			) : (
 				<div>
