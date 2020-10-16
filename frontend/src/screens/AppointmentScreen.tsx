@@ -40,7 +40,7 @@ const ShippingScreen = ({ history }) => {
 				end,
 			},
 		})
-		Axios.post('api/meetings', {
+		Axios.post('/api/meetings', {
 			personal,
 			health,
 			appointment: {
