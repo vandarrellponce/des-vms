@@ -6,6 +6,7 @@ import meetingRoutes from './routes/meetingRoutes.js'
 import visitorRoutes from './routes/visitorRoutes.js'
 import connectDB from './config/db.js'
 import errorHandler from './middlewares/errorHandler.js'
+import path from 'path'
 
 // APP CONFIG
 dotenv.config()
@@ -23,6 +24,17 @@ app.get('/api', (req, res) => {
 app.use('/api/meetings', meetingRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/visitor', visitorRoutes)
+
+// SERVE STATIC ASSETS IF IN PRODUCTION - must put above clean up code
+const __dirname = path.resolve()
+if (process.env.NODE_ENV === 'production') {
+	// set static folder
+	app.use(express.static(path.join(__dirname, '/frontend/build')))
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+	})
+}
+
 app.all('*', (req, res) =>
 	res.status(404).send({ message: `Not found - ${req.originalUrl}` })
 )

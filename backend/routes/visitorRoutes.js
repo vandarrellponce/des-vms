@@ -1,8 +1,8 @@
 import express from 'express'
-import { createMeeting } from '../controller/meetingController.js'
+import { loginVisitor } from '../controller/visitorController.js'
 
 const router = express.Router()
 
-router.route('/').post(createMeeting)
+router.route('/login').post(loginVisitor)
 
 export default router
