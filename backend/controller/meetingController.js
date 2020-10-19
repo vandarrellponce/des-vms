@@ -41,14 +41,30 @@ export const createMeeting = expressAsyncHandler(async (req, res) => {
 	}
 })
 
-// @desc	Create meeting and generate token
-// @route	Post /api/meetings/:meetingId
+// @desc	Get meeting by id
+// @route	get /api/meetings/:meetingId
 // @access	Public
-export const getMeeting = expressAsyncHandler(async (req, res) => {
+export const getMeetingById = expressAsyncHandler(async (req, res) => {
 	try {
 		const meeting = await Meeting.findById(req.params.meetingId)
 		if (!meeting) throw new Error('No Meeting Found')
 		res.send(meeting)
+
+		// send back meeting object and qr code
+	} catch (error) {
+		res.status(400)
+		console.log(error)
+		throw new Error(error.message)
+	}
+})
+
+// @desc	Get all meetings
+// @route	get /api/meetings/
+// @access	Private/Admin
+export const getMeetings = expressAsyncHandler(async (req, res) => {
+	try {
+		const meetings = await Meeting.find({})
+		res.send(meetings)
 
 		// send back meeting object and qr code
 	} catch (error) {
