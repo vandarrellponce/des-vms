@@ -17,6 +17,7 @@ import { PassThrough } from 'stream'
 import PasscodeScreen from './screens/PasscodeScreen'
 import VisitorLogin from './screens/VisitorLogin'
 import UpcommingVisitorsScreen from './screens/UpcommingVisitorsScreen'
+import RecentVisitorsScreen from './screens/RecentVisitorsScreen'
 
 const App = () => {
 	const { userInfo } = useSelector((state) => state.user)
@@ -31,6 +32,7 @@ const App = () => {
 			<main className="py-3">
 				<Container>
 					{/* <Route path="/fillup" component={FillupScreen} /> */}
+					<Route path="/recent" component={RecentVisitorsScreen} />
 					<Route path="/upcomming" component={UpcommingVisitorsScreen} />
 					<Route path="/visitorlogin" component={VisitorLogin} />
 					<Route path="/login" exact component={LoginScreen} />

@@ -7,15 +7,11 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 import Axios from 'axios'
 
-const UpcommingVisitorsScreen = ({ history, match }) => {
+const RecentVisitorsScreen = ({ history, match }) => {
 	const [meetings, setMeetings] = useState([])
 
 	// USE EFFECT
-	useEffect(() => {
-		Axios.get('/api/meetings').then((res) => {
-			setMeetings(res.data)
-		})
-	}, [])
+	useEffect(() => {}, [])
 
 	// HANDLERS
 	const deleteHandler = async () => {}
@@ -25,7 +21,7 @@ const UpcommingVisitorsScreen = ({ history, match }) => {
 		<div>
 			<Row className="align-items-center">
 				<Col>
-					<h1>Upcomming Visitors</h1>
+					<h1>Recent Visitors</h1>
 				</Col>
 				{/* <Col className="text-right">
 					<Button className="my-3" onClick={createProductHandler}>
@@ -41,6 +37,8 @@ const UpcommingVisitorsScreen = ({ history, match }) => {
 						<th>PERSON TO VISIT</th>
 						<th>SCHEDULE FROM</th>
 						<th>SCHEDULE UNTIL</th>
+						<th>LOGIN TIME</th>
+						<th>LOGOUT TIME</th>
 						<th>ACTIONS</th>
 					</tr>
 				</thead>
@@ -77,4 +75,4 @@ const UpcommingVisitorsScreen = ({ history, match }) => {
 	)
 }
 
-export default UpcommingVisitorsScreen
+export default RecentVisitorsScreen
