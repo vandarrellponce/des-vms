@@ -18,37 +18,39 @@ import PasscodeScreen from './screens/PasscodeScreen'
 import VisitorLogin from './screens/VisitorLogin'
 import UpcommingVisitorsScreen from './screens/UpcommingVisitorsScreen'
 import RecentVisitorsScreen from './screens/RecentVisitorsScreen'
+import SubHeader from './components/SubHeader/SubHeader'
 
 const App = () => {
-	const { userInfo } = useSelector((state) => state.user)
-	const dispatch = useDispatch()
-	useEffect(() => {
-		dispatch(authUser())
-	}, [])
+  const { userInfo } = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(authUser())
+  }, [])
 
-	return (
-		<BrowserRouter>
-			<Header />
-			<main className="py-3">
-				<Container>
-					{/* <Route path="/fillup" component={FillupScreen} /> */}
-					<Route path="/recent" component={RecentVisitorsScreen} />
-					<Route path="/upcomming" component={UpcommingVisitorsScreen} />
-					<Route path="/visitorlogin" component={VisitorLogin} />
-					<Route path="/login" exact component={LoginScreen} />
-					<Route path="/register" component={RegisterScreen} />
-					<Route path="/profile" component={ProfileScreen} />
-					<Route path="/meetings/:meetingId" component={PasscodeScreen} />
-					<Route path="/appointment" component={AppointmentScreen} />
+  return (
+    <BrowserRouter>
+      <Header />
+      <SubHeader />
+      <main className="py-3">
+        <Container>
+          {/* <Route path="/fillup" component={FillupScreen} /> */}
+          <Route path="/recent" component={RecentVisitorsScreen} />
+          <Route path="/upcomming" component={UpcommingVisitorsScreen} />
+          <Route path="/visitorlogin" component={VisitorLogin} />
+          <Route path="/login" exact component={LoginScreen} />
+          <Route path="/register" component={RegisterScreen} />
+          <Route path="/profile" component={ProfileScreen} />
+          <Route path="/meetings/:meetingId" component={PasscodeScreen} />
+          <Route path="/appointment" component={AppointmentScreen} />
 
-					<Route path="/health" component={HealthScreen} />
-					<Route path="/personal" component={PersonalScreen} />
-					<Route path="/" exact component={Home} />
-				</Container>
-			</main>
-			<Footer />
-		</BrowserRouter>
-	)
+          <Route path="/health" component={HealthScreen} />
+          <Route path="/personal" component={PersonalScreen} />
+          <Route path="/" exact component={Home} />
+        </Container>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
 export default App
