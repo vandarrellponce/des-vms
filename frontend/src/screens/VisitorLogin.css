@@ -1,0 +1,55 @@
+.visitor-login__label {
+  color: #00bc8c;
+}
+
+.visitor-login__meeting-details span {
+  color: #00bc8c;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.visitor-login__meeting-details p {
+  display: flex;
+  font-size: 12px;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.visitor-login__meeting-details {
+  background-color: rgb(46, 46, 46);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+  font-size: 16px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visitor-login__time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.visitor-login__visitor-details {
+  background-color: rgb(46, 46, 46);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.visitor-login__visitor-details span {
+  color: #00bc8c;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.visitor-login__visitor-details p {
+  display: flex;
+  font-size: 12px;
+  flex-direction: column;
+  margin: 0px;
+}
