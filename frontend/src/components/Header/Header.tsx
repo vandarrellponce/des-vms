@@ -26,7 +26,7 @@ const Header = () => {
       <Navbar
         expand="lg"
         collapseOnSelect
-        style={{ backgroundColor: 'rgb(0,0,0)' }}
+        style={{ backgroundColor: 'rgb(0,0,0)', color: '#AEAEAE' }}
       >
         <Container>
           <LinkContainer to="/">
