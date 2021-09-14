@@ -26,12 +26,21 @@ const Header = () => {
       <Navbar
         expand="lg"
         collapseOnSelect
-        style={{ backgroundColor: 'rgb(0,0,0)', color: '#AEAEAE' }}
+        style={{
+          backgroundColor: 'rgb(0,0,0)',
+          height: '80px',
+        }}
       >
         <Container>
-          <LinkContainer to="/">
+          <LinkContainer to="/" style={{ color: '#AEAEAE' }}>
             <Navbar.Brand>
-              <i className="fas fa-users-cog size-5x"> </i> VMgmt
+              <i
+                className="fas fa-users-cog size-5x"
+                style={{ color: '#AEAEAE' }}
+              >
+                {' '}
+              </i>{' '}
+              VMgmt
             </Navbar.Brand>
           </LinkContainer>
 
@@ -42,22 +51,25 @@ const Header = () => {
             <Nav className="ml-auto">
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                  <LinkContainer to="/profile">
+                  <LinkContainer to="/profile" style={{ color: '#AEAEAE' }}>
                     <NavDropdown.Item>My Profile</NavDropdown.Item>
                   </LinkContainer>
 
-                  <NavDropdown.Item onClick={logoutHandler}>
+                  <NavDropdown.Item
+                    onClick={logoutHandler}
+                    style={{ color: '#AEAEAE' }}
+                  >
                     Logout
                   </NavDropdown.Item>
 
                   <NavDropdown.Divider />
 
-                  <LinkContainer to="/profile">
+                  <LinkContainer to="/profile" style={{ color: '#AEAEAE' }}>
                     <NavDropdown.Item>Other Link</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               ) : (
-                <LinkContainer to="/login">
+                <LinkContainer to="/login" style={{ color: '#AEAEAE' }}>
                   <Nav.Link>
                     <i className="fas fa-user px-1"></i>
                     Login

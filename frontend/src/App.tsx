@@ -28,28 +28,30 @@ const App = () => {
   }, [])
 
   return (
-    <BrowserRouter>
-      <Header />
-      <SubHeader />
-      <main className="py-3">
-        <Container>
-          {/* <Route path="/fillup" component={FillupScreen} /> */}
-          <Route path="/recent" component={RecentVisitorsScreen} />
-          <Route path="/upcomming" component={UpcommingVisitorsScreen} />
-          <Route path="/visitorlogin" component={VisitorLogin} />
-          <Route path="/login" exact component={LoginScreen} />
-          <Route path="/register" component={RegisterScreen} />
-          <Route path="/profile" component={ProfileScreen} />
-          <Route path="/meetings/:meetingId" component={PasscodeScreen} />
-          <Route path="/appointment" component={AppointmentScreen} />
+    <div style={{ backgroundColor: '#fafafa', height: '100vh' }}>
+      <BrowserRouter>
+        <Header />
+        <SubHeader />
+        <main className="py-3">
+          <Container>
+            {/* <Route path="/fillup" component={FillupScreen} /> */}
+            <Route path="/recent" component={RecentVisitorsScreen} />
+            <Route path="/upcomming" component={UpcommingVisitorsScreen} />
+            <Route path="/visitorlogin" component={VisitorLogin} />
+            <Route path="/login" exact component={LoginScreen} />
+            <Route path="/register" component={RegisterScreen} />
+            <Route path="/profile" component={ProfileScreen} />
+            <Route path="/meetings/:meetingId" component={PasscodeScreen} />
+            <Route path="/appointment" component={AppointmentScreen} />
 
-          <Route path="/health" component={HealthScreen} />
-          <Route path="/personal" component={PersonalScreen} />
-          <Route path="/" exact component={Home} />
-        </Container>
-      </main>
-      <Footer />
-    </BrowserRouter>
+            <Route path="/health" component={HealthScreen} />
+            <Route path="/personal" component={PersonalScreen} />
+            <Route path="/" exact component={Home} />
+          </Container>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </div>
   )
 }
 
