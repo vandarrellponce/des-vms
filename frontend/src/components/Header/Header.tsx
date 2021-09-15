@@ -1,15 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
 import logoutUser from '../../actions/users/logoutUser'
+import { RiArrowDownSLine } from 'react-icons/ri'
+
+const Organization = () => {
+  const [show, setShow] = useState(false)
+  return (
+    <div
+      className="header__organization__wrapper"
+      onClick={() => setShow((prev) => !prev)}
+    >
+      <div className="header__organization__text__container">
+        <span className="organization__title">ORGANIZATION</span>
+        <span className="organization__name">
+          Electronics Security Systems Corporation
+        </span>
+      </div>
+      <div className="organization__dropdown__icon">
+        <RiArrowDownSLine />
+      </div>
+      <div className={show ? 'organization__dropdown' : 'hide'}>
+        <div className="dropdown__item__orgname">
+          <span>Electronics Security Systems Corporation</span>
+        </div>
+        <div className="dropdown__item">
+          <span>Change Org. Plan</span>
+        </div>
+        <div className="dropdown__item">
+          <span>Update Organization</span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.user)
@@ -86,6 +115,7 @@ const Header = () => {
 						<Button variant="outline-success">Search</Button>
 					</Form> */}
           </Navbar.Collapse>
+          <Organization />
         </Container>
       </Navbar>
     </header>
