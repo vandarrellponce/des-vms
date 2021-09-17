@@ -17,9 +17,14 @@ const Home = ({ history }) => {
         <div className="home__buttons__container">
           <FormContainer>
             {' '}
-            <h4>Available Actions</h4>
+            <h4 style={{ color: '#969b9e' }}>Available Actions</h4>
             <Button
-              style={{ width: '100%', marginTop: '10px' }}
+              style={{
+                width: '100%',
+                marginTop: '10px',
+                fontSize: '12px',
+                backgroundColor: '#1A1D23',
+              }}
               onClick={(e) => history.push('/personal')}
             >
               Create Appointment
@@ -27,7 +32,7 @@ const Home = ({ history }) => {
             <br />
             <br />
             <Button
-              style={{ width: '100%' }}
+              style={{ width: '100%', fontSize: '12px' }}
               onClick={(e) => history.push('/visitorlogin')}
             >
               Login a Visitor
@@ -35,7 +40,7 @@ const Home = ({ history }) => {
             <br />
             <br />
             <Button
-              style={{ width: '100%' }}
+              style={{ width: '100%', fontSize: '12px' }}
               onClick={(e) => history.push('/visitorlogout')}
             >
               Logout a Visitor
