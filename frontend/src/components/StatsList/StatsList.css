@@ -47,4 +47,9 @@
 .statslist__wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.statslist__chart {
+  margin-top: 30px;
 }

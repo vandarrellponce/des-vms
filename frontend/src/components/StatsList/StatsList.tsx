@@ -1,4 +1,5 @@
 import React from 'react'
+import { Chart } from 'react-google-charts'
 import './StatsList.css'
 
 const Bar = ({ name, value }) => {
@@ -30,6 +31,25 @@ const StatsList = () => {
     <div className="statslist__wrapper">
       <Line name="Upcomming Visitors" value="0" />
       <Bar name="Recent Visitors" value="0" />
+
+      <Chart
+        width="650px"
+        height="auto"
+        className="statslist__chart"
+        chartType="PieChart"
+        loader={<div>Loading Chart</div>}
+        data={[
+          ['Task', 'Hours per Day'],
+          ['Pre-sales Support', 11],
+          ['Post-sales Support', 2],
+          ['Research & Development', 2],
+          ['Office Compliance', 2],
+        ]}
+        options={{
+          title: 'Daily Activity Report',
+        }}
+        rootProps={{ 'data-testid': '1' }}
+      />
     </div>
   )
 }
