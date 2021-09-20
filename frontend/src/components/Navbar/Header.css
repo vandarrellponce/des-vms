@@ -1,0 +1,58 @@
+.header__main__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__wrapper {
+  background-color: #000000;
+  height: 100px;
+  color: #b2b2b2;
+  display: flex;
+  padding: 0 160px;
+  justify-content: space-between;
+}
+
+.right__links__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right__link {
+  margin: 0 20px;
+  font-size: 20px;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: white;
+}
+
+.left__links__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left__link {
+  margin: 0 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.org__text__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.org__title {
+  font-size: 16px;
+}
+
+.org__name {
+  font-size: 14px;
+  color: white;
+}

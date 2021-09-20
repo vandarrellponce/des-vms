@@ -1,0 +1,17 @@
+.subheader__wrapper {
+  height: 45px;
+  background-color: #1a1d23;
+  color: #b2b2b2;
+  display: flex;
+
+  padding: 0 160px;
+
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.subheader__link {
+  margin: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+}

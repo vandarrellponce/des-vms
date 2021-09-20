@@ -1,20 +1,15 @@
 .home__title {
   margin-top: 40px;
+  margin-bottom: 30px;
+
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgb(190, 190, 190);
 }
 
 .home__wrapper {
   padding-top: 25px;
   margin-top: 25px;
   display: flex;
-  border-top: 1px solid rgb(221, 221, 221);
-}
-
-.home__stats__container {
-  flex-grow: 3;
-}
-
-.home__buttons__container {
-  flex-grow: 9;
 }
 
 @media (max-width: 800px) {

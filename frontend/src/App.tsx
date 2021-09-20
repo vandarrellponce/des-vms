@@ -28,7 +28,7 @@ const App = () => {
   }, [])
 
   return (
-    <div style={{ backgroundColor: '#fafafa', height: '100vh' }}>
+    <div style={{ backgroundColor: '#fafafa' }}>
       <BrowserRouter>
         <Header />
         <SubHeader />
@@ -49,7 +49,7 @@ const App = () => {
             <Route path="/" exact component={Home} />
           </Container>
         </main>
-        <Footer />
+        {/*   <Footer /> */}
       </BrowserRouter>
     </div>
   )
